@@ -43,7 +43,8 @@ int main(int ac, char* av[])
         ;
 
         po::positional_options_description p;
-        p.add("input-file", -1);
+        p.add("input-file", 2);
+        p.add("include-path", -1);  // 只能一个 -1，
 
         po::variables_map vm;
         po::store(po::command_line_parser(ac, av).
